@@ -56,17 +56,11 @@ var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?ac
     "Gas Plants": layers.Gas,
     "Other Plants": layers.Other
   };
-    //creating the base maps of the different maps 
-    //create an overlays object to add to the layer control
-    //var overlays = {
-     // "Earthquakes": earthquakes,
-     // "Tectonicplates" : tectonicplates
-   // };
 
-    // Create a layer control
-    //L.control.layers(null,overlays).addTo(myMap);
 
     // Create a legend to display information about our map
+
+    //creating the different icons for the markers. 
 
     var icons = {
       Hyrdro: L.icon({

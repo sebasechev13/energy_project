@@ -16,7 +16,14 @@ var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?ac
     Gas: new L.LayerGroup(),
     Other: new L.LayerGroup()
   };
-
+  var greenIcon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
 
 
   //add control for plants 
@@ -62,23 +69,23 @@ var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?ac
     // Create a legend to display information about our map
 
     var icons = {
-      Hyrdro: {
+      Hyrdro: L.icon({
         iconUrl: "hydro.png",
         iconSize:[50,50]
        
-      },
-      Solar: {
+      }),
+      Solar: L.icon({
         iconUrl: "solar.png",
         iconSize:[50,50]
-      },
-      Wind: {
+      }),
+      Wind: L.icon({
         iconUrl: "wind.png",
         iconSize:[50,50]
-      },
-      Gas: {
+      }),
+      Gas: L.icon({
         iconUrl: "gas.png",
         iconSize:[50,50]
-      },
+      }),
       Other: {
         iconUrl: "other.png",
         iconSize:[50,50]
@@ -90,7 +97,7 @@ var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?ac
 
 
     
-d3.csv('power_plants_filtered.csv', function(err, data) {
+d3.csv('final.csv', function(err, data) {
 
   function fuel(primary_fuel) {
     if (primary_fuel ="Hydro") {
@@ -130,3 +137,21 @@ d3.csv('power_plants_filtered.csv', function(err, data) {
     });
     console.log(data)
   });
+  d3.csv('all_data.csv', function(err, data) {
+
+  
+    
+    data.forEach(country =>{
+      var marker2 = L.marker([country.latitude, country.longitude],{
+        icon: greenIcon});
+      
+     
+    
+  
+     marker2.bindPopup("Country:"+country.country_long+"<br>Estimated Generation(M TOE):"+country.estimated_generation_toe+"<br>Consumption(M TOE):"+country.consumption);
+  
+     marker2.addTo(myMap);
+     
+      });
+      console.log(data)
+    });

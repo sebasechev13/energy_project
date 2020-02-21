@@ -1,25 +1,10 @@
-// Create the tile layer that will be the background of our map
-var queryUrl =  "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson";
-// create api call to the eathrquak website  
 
 // Define streetmap and darkmap layers
   
 var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
       attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
       maxZoom: 18,
-      id: "mapbox.run-bike-hike",
-      accessToken: API_KEY
-    });
-    var comic = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-      attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-      maxZoom: 18,
-      id: "mapbox.high-contrast",
-      accessToken: API_KEY
-    });
-    var satilite = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-      attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-      maxZoom: 18,
-      id: "mapbox.streets-satellite",
+      id: "mapbox.light",
       accessToken: API_KEY
     });
 
@@ -55,7 +40,7 @@ var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?ac
   L.control.layers(null, overlays).addTo(myMap);
 
     //add our street map to map
-    comic.addTo(myMap);
+    light.addTo(myMap);
   //layer controls 
   var overlays = {
     "Hyrdro Plants": layers.Hyrdro,
@@ -65,12 +50,6 @@ var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?ac
     "Other Plants": layers.Other
   };
     //creating the base maps of the different maps 
-    var baseMaps ={
-      "Satellite" : satilite,
-      "Comic": comic,
-      "Light":light
-    
-    }
     //create an overlays object to add to the layer control
     //var overlays = {
      // "Earthquakes": earthquakes,
@@ -79,7 +58,7 @@ var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?ac
 
     // Create a layer control
     //L.control.layers(null,overlays).addTo(myMap);
-    L.control.layers(baseMaps).addTo(myMap);
+
     // Create a legend to display information about our map
 
     var icons = {

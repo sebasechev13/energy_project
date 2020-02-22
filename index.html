@@ -1,30 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Leaflet Step-1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Energy Plants Visualizations</title>
 </head>
-<body>
 
-  <!-- The div that holds our map -->
-  <div id="map"></div>
+<body style="background-color: lightgray">
+<!--Navigation Bar Header Section -->
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+            
+            <div class="navbar-header">
+                <a class="navbar-brand logo" href="index.html"> 
+                <span class="nav-color">Energy Plants</span></a>
+            
+        </div>
 
-  <!-- Leaflet JavaScript -->
-  <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
-  <!-- D3 JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
-    <!-- API Key -->
-    <script type="text/javascript" src="static/js/config.js"></script>
-  <!-- Our JavaScript -->
-  <script type="text/javascript" src="static/js/logic.js"></script>
+            <div class="nav navbar-nav navbar-right">
+                
+                <li><a href="map.html"> Plants Map</a></li>
+                <li><a href="Bar_graph.html"> Data</a></li>                                           
+            </div>
+        </div>      
+    </nav>
 
+    <!--Content/ Body Section -->
+    <div class = "container" >
+        
+      <div class="row">
+      <div class="col-md-12">
+          <div class="panel panel-default">
+              <div class="panel-body">
+
+              <h2><center>Summary: Energy Plants</center></h2>
+              <hr>
+              <img src="https://cdn1.vectorstock.com/i/1000x1000/87/75/power-plant-icons-electricity-generation-plants-vector-8768775.jpg" height="400" width="500" align="left" alt="first image" >
+              <p class="p1">We developed a visualization that shows the top producing power plants in each country. The visualization  distinguished between different energy sources including Oil, Gas, Hydro, Wind, etc.. We compared the fuel consumption data in 2017 to the estimated fuel generation of all power plants present in 2016-2017. This information was calculated to be presented in toe: Tonne of oil equivalent (toe) is a unit of energy, defined as the amount of energy released by burning one tonne (1000 Kilograms) of crude oil. The toe is used to describe large amounts of oil or natural gas in transport or consumption, and will often use a prefix of mega (1 000 000) in order to communicate this as Mtoe.  </p>
+               <p class= "p1">
+              </p>
+          
+              <br>        
+              </div>
+         
+      </div>
+      </div>
+      
+</div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer">Copyright &copy; Sebastian Echeverri and Jasmine Pattany 2020</div>
+  </footer>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.1.0/echarts-en.common.min.js"></script>
 </body>
 </html>
+
+
+
+    

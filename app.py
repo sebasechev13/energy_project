@@ -17,12 +17,12 @@ mongo = PyMongo(app)
 # Flask Routes
 # Root Route to Query MongoDB & Pass Mars Data Into HTML Template: index.html to Display Data
 @app.route("/")
-#def index():
-  #  energy = mongo.db.energy.find_one()
-    #return render_template("index.html", energy=energy)##
+def index():
+   energy = mongo.db.energy.find_one()
+    return render_template("index.html")
 
 # Scrape Route to Import `scrape_mars.py` Script & Call `scrape` Function
-@app.route("/scrape")
+@app.route("/datacleaning")
 def scrapper():
     energy = mongo.db.energy
     energy_data = energy_data
